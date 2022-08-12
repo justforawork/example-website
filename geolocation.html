@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+            function getLocation()
+            {
+                if (navigator.geolocation)
+                {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else 
+                {
+                    document.getElementById(locatio).innerHTML="Geolocation is not supported by this browser";
+                }
+            }
+
+            function showPosition(position)
+            {
+                document.getElementById(locatio).innerHTML="Latitude: " + position.coords.latitude + "<br> Longitude: " + position.coords.longitude;
+            }
+
+        </script>
+    </head>
+    <body>
+        <p>Where are you in the world?</p>
+        <button onclick="getLocation()">Get Coordinates</button>
+        <p id="locatio"></p>
+    </body>
+</html>
